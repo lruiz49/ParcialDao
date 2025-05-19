@@ -11,7 +11,7 @@ public abstract class EventHandlerBase {
     private static final List<EventHandlerBase> handlers = new ArrayList<>();
 
     static{
-        Reflections reflections = new Reflections("");
+        Reflections reflections = new Reflections("eventHandlers");
         Set<Class<? extends EventHandlerBase>> subTypes = reflections.getSubTypesOf(EventHandlerBase.class);
 
         for (Class<? extends EventHandlerBase> clazz : subTypes) {
@@ -23,21 +23,20 @@ public abstract class EventHandlerBase {
         }
     }
 
-    public void handleEvent(Event event){
+    public static void findHandler(Event event){
 
         for (EventHandlerBase handler : handlers) {
 
             if (handler.canHandle(event)) {
-                handler.handle(event);
+                handler.handleEvent(event);
                 break;
             }
         }
-        throw new RuntimeException("Can't handle event.");
     }
 
     public boolean canHandle(Event event){
         return false;
     }    
 
-    public void handle(Event event){}
+    public void handleEvent(Event event){}
 }
