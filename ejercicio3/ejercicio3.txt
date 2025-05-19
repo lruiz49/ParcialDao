@@ -1,0 +1,40 @@
+Contexto
+
+Una aplicación de comercio electrónico necesita procesar diferentes tipos de eventos (como pedidos, pagos, cancelaciones, devoluciones) de manera flexible. Cada tipo de evento requiere un procesamiento específico, y es necesario poder añadir fácilmente nuevos tipos de eventos y manejadores sin modificar el código existente.
+Ejemplos de Eventos
+
+Para facilitar la realización del ejercicio, considere los siguientes ejemplos de eventos que el sistema debería procesar:
+
+Evento de Nuevo Pedido
+Datos: ID de cliente, lista de productos, dirección de entrega, método de pago
+Procesamiento: validar stock, reservar productos, calcular total
+
+Evento de Pago Recibido
+Datos: ID de pedido, monto, método de pago, fecha, identificador de transacción
+Procesamiento: verificar monto, actualizar estado del pedido, emitir factura
+
+Evento de Cancelación de Pedido
+Datos: ID de pedido, motivo, solicitante (cliente o sistema)
+Procesamiento: verificar si es cancelable, liberar stock, procesar reembolso si aplica
+
+Evento de Problema de Entrega
+Datos: ID de pedido, código de error, descripción, ubicación
+Procesamiento: notificar al cliente, reprogramar entrega, escalar a atención al cliente
+
+Evento de Devolución
+Datos: ID de pedido, productos devueltos, motivo, estado de los productos
+Procesamiento: aprobar devolución, actualizar inventario, procesar reembolso
+
+Requerimientos
+
+Implemente un sistema de procesamiento de eventos utilizando el patrón Chain of Responsibility y técnicas de metaprogramación.
+
+El sistema debe:
+Tener una clase base abstracta o interfaz para los manejadores de eventos
+Permitir registrar dinámicamente diferentes manejadores para diferentes tipos de eventos
+Iterar por la cadena de manejadores hasta que uno pueda procesar el evento
+Incluir al menos 3 tipos diferentes de eventos de la lista anterior y sus respectivos manejadores
+Implementar un mecanismo para que cada manejador determine si puede procesar un evento específico
+
+Implemente una solución que permita:
+Añadir nuevos tipos de eventos sin modificar el código existente

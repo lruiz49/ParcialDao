@@ -1,0 +1,18 @@
+Contexto
+Una aplicación de gestión de proyectos necesita un sistema flexible de notificaciones. El sistema debe permitir enviar mensajes básicos, pero también debe ser posible agregar funcionalidades extra como:
+Encriptación de mensajes
+Compresión de datos
+Formato especial (HTML, Markdown, etc.)
+Registro de envíos (logging)
+
+
+Requerimientos
+Diseñe e implemente un sistema de notificaciones utilizando el patrón Decorator.
+El sistema debe tener al menos una clase base de notificación y 3 decoradores diferentes.
+Demuestre cómo se pueden combinar varios decoradores para crear notificaciones con múltiples características.
+Incluya un caso de uso práctico donde se envíen diferentes tipos de notificaciones.
+
+
+Entregable
+Código fuente de la implementación
+Ejemplo de uso que muestre la combinación de decoradores

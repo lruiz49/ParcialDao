@@ -1,0 +1,21 @@
+Contexto
+Una empresa necesita generar diferentes tipos de reportes a partir de una estructura de datos heterogénea que incluye información de empleados, departamentos y proyectos. Cada tipo de reporte requiere procesar esta información de manera diferente.
+
+Requerimientos
+
+Implemente una estructura de clases para representar:
+Empleados (con atributos como nombre, salario, horas trabajadas)
+Departamentos (con lista de empleados, presupuesto)
+Proyectos (con lista de empleados asignados, plazos, estado)
+
+Utilizando el patrón Visitor, implemente dos visitantes diferentes:
+
+Un visitante para generar reportes en formato de texto plano
+Un visitante para calcular estadísticas (costo total, horas asignadas, etc.)
+
+Debe permitir que sea fácil agregar nuevos tipos de reportes sin modificar las clases de la estructura.
+
+Entregable
+
+Código fuente de la implementación
+Ejemplos de uso que demuestren cómo se generan diferentes reportes
